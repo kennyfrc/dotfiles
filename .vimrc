@@ -7,8 +7,12 @@ set tabstop=4
 " Ensure that once you hit enter, it automatically indents
 set autoindent
 
-" Ensure that the cursor stays in the middle
+" Ensure that your cursor stays in the middle as much as possible
 set scrolloff=999
+
+" Ensure that whenever doing splits, it does it either below or to the right
+set splitbelow
+set splitright
 
 " Nicely formatted windows
 set winwidth=84
