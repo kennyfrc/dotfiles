@@ -1,9 +1,6 @@
 " Kenn's settings
 syntax on
 
-" Remap CTRL-w (which is crap) to leader-w
-:nnoremap <Leader>w <C-w>
-
 " Tabbing creates 4 spaces
 set tabstop=4
 
