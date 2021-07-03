@@ -1,8 +1,15 @@
 " Kenn's settings
 syntax on
 
-" Tabbing creates 4 spaces
+" Tabbing and indenting creates 4 spaces
 set tabstop=4
+set shiftwidth=4
+
+" Show line numbers
+set number
+
+" True color mode
+set termguicolors
 
 " Ensure that once you hit enter, it automatically indents
 set autoindent

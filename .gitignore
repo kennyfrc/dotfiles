@@ -4,4 +4,4 @@
 # Except these files
 !.gitignore
 !.vimrc
-
+!.sublime-keymap
