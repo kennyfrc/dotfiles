@@ -13,7 +13,7 @@ else
 	mkdir src &&
 	mkdir test &&
 	npm init &&
-	npm install webpack webpack-cli --dev &&
+	npm install -g webpack webpack-cli --save-dev &&
 	npm install @babel/core @babel/preset-env  &&
 	npm install eslint @babel/eslint-parser &&
 	npx eslint --init
