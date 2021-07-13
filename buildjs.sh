@@ -18,7 +18,10 @@ else
 	npm install eslint @babel/eslint-parser &&
 	npx eslint --init
 
+	echo ""
 	echo "Don't forget to set parser (@babel/eslint-parser),"
 	echo "set parserOptions (sourceType: module), and"
-	echo "set requireConfigFile to false in .eslintrc.json."		
+	echo "set requireConfigFile to false in .eslintrc.json."
+	echo ""
+	echo "Further, add type: module in package.json"
 fi
