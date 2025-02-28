@@ -1,6 +1,6 @@
 # Dotfiles
 
-Configuration files for various Unix programs I use daily. This repo helps synchronize my development environment across different machines.
+Configuration files I use daily. This repo helps synchronize my development environment across different machines. The deployment scripts might be useful to the public to apply in their own repos.
 
 ## What's Included
 
