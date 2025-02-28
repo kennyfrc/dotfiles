@@ -22,9 +22,8 @@ statusline.left = ["mode", "spinner", "file-name", "file-modification-indicator"
 statusline.center = ["workspace-diagnostics", "selections"]
 statusline.right = ["diagnostics", "position", "file-encoding"]
 
-# Enable LSP features
-lsp.display-messages = true
-lsp.display-inlay-hints = true
+# Disable some lsp features
+lsp.auto-signature-help = false
 
 # Clipboard settings for macOS
 clipboard-provider = "pasteboard"
