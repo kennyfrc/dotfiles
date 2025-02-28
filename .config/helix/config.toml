@@ -1,0 +1,73 @@
+theme = "monokai_pro"
+
+[editor]
+line-number = "relative"
+mouse = true
+cursorline = true
+rulers = [80]
+bufferline = "always"
+color-modes = true
+true-color = true
+idle-timeout = 50
+default-yank-register = "+"
+auto-pairs = false
+
+# Cursor settings
+scrolloff = 4
+shell = ["bash", "-c"]
+text-width = 80
+
+# Status line elements
+statusline.left = ["mode", "spinner", "file-name", "file-modification-indicator"]
+statusline.center = ["workspace-diagnostics", "selections"]
+statusline.right = ["diagnostics", "position", "file-encoding"]
+
+# Enable LSP features
+lsp.display-messages = true
+lsp.display-inlay-hints = true
+
+# Clipboard settings for macOS
+clipboard-provider = "pasteboard"
+
+[editor.search]
+smart-case = true
+wrap-around = true
+
+[editor.file-picker]
+hidden = false
+
+[keys.normal]
+C-c = ["collapse_selection", "normal_mode"]
+C-s = [":write", "normal_mode"]
+space.d = ":buffer-close"
+space.n = ":buffer-next"
+space.p = ":buffer-previous"
+space.v = ":vsplit"
+space.s = ":hsplit"
+C-h = "jump_view_left"
+C-j = "jump_view_down"
+C-k = "jump_view_up"
+C-l = "jump_view_right"
+y = "yank_to_clipboard"
+Y = "yank_joined_to_clipboard"
+p = "paste_clipboard_after"
+P = "paste_clipboard_before"
+d = ["yank_to_clipboard", "delete_selection_noyank"]
+esc = ["collapse_selection", "normal_mode"]
+j = "move_line_down"
+k = "move_line_up"
+
+[keys.insert]
+C-s = [":write", "normal_mode"]
+C-c = ["collapse_selection", "normal_mode"]
+esc = ["collapse_selection", "normal_mode"]
+
+[keys.select]
+C-s = [":write", "normal_mode"]
+">" = ["indent"]
+"<" = ["unindent"]
+C-c = ["collapse_selection", "normal_mode"]
+esc = ["collapse_selection", "normal_mode"]
+
+[editor.soft-wrap]
+enable = true
