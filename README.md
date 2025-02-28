@@ -22,7 +22,7 @@ Configuration files I use daily. This repo helps synchronize my development envi
 Clone the repo and run the deployment script:
 
 ```bash
-git clone https://your-repo-url/dotfiles.git
+git clone git@github.com:kennyfrc/dotfiles.git
 cd dotfiles
 chmod +x deploy_dotfiles.sh
 ./deploy_dotfiles.sh manifest_dotfiles.toml
@@ -38,7 +38,7 @@ scp -r ./dotfiles user@remote-server:~/
 ssh user@remote-server "cd ~/dotfiles && chmod +x deploy_dotfiles.sh && ./deploy_dotfiles.sh manifest_dotfiles.toml"
 
 # Alternatively, clone directly on the server
-ssh user@remote-server "git clone https://your-repo-url/dotfiles.git ~/dotfiles && \
+ssh user@remote-server "git clone git@github.com:<YOUR-USERNAME>/dotfiles.git ~/dotfiles && \
   cd ~/dotfiles && chmod +x deploy_dotfiles.sh && ./deploy_dotfiles.sh manifest_dotfiles.toml"
 ```
 
