@@ -4,8 +4,6 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
--- This is where you actually apply your config choices
-
 -- Split panes
 config.keys = {
   -- This will create a new split and run the `top` program inside it
@@ -20,18 +18,18 @@ config.keys = {
   },
 }
 
--- For example, changing the color scheme:
+-- Color schemes
 config.color_scheme = "Breeze (Gogh)"
 config.font = wezterm.font("IosevkaTerm Nerd Font Mono")
 config.font_size = 16.0
 config.initial_cols = 180
 config.initial_rows = 60
 
+-- This does auto-reloading for the helix editor
 -- https://wezfurlong.org/wezterm/config/lua/pane/get_foreground_process_name.html
 -- Equivalent to POSIX basename(3)
 -- Given "/foo/bar" returns "bar"
 -- Given "c:\\foo\\bar" returns "bar"
--- This does auto-reloading for the helix editor
 function basename(s)
   return string.gsub(s, '(.*[/\\])(.*)', '%2')
 end
@@ -47,5 +45,5 @@ wezterm.on('window-focus-changed', function(window, pane)
     end
 end)
 
--- and finally, return the configuration to wezterm
+-- return the configuration to wezterm
 return config
