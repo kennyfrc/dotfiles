@@ -17,6 +17,7 @@ config.keys = {
       size = { Percent = 50 },
     }),
   },
+  -- This will allow users to enter a new tab for tab
   {
     key = 'E',
     mods = 'CTRL|SHIFT',
