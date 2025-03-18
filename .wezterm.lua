@@ -1,6 +1,5 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
-
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 local act = wezterm.action
@@ -33,8 +32,24 @@ config.keys = {
       end),
     },
   },
+  -- Add word navigation shortcuts
+  {
+    key = 'LeftArrow',
+    mods = 'ALT',
+    action = act.SendKey { key = 'b', mods = 'ALT' }
+  },
+  {
+    key = 'RightArrow',
+    mods = 'ALT',
+    action = act.SendKey { key = 'f', mods = 'ALT' }
+  },
+  -- Optional: Add word deletion shortcuts
+  {
+    key = 'Backspace',
+    mods = 'ALT',
+    action = act.SendKey { key = 'w', mods = 'CTRL' }
+  }
 }
-
 
 -- Color schemes
 config.color_scheme = "Breeze (Gogh)"
