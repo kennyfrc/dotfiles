@@ -53,7 +53,7 @@ config.keys = {
 
 -- Color schemes
 config.color_scheme = "Breeze (Gogh)"
-config.font = wezterm.font("IosevkaTerm Nerd Font Mono")
+config.font = wezterm.font("JetBrains Mono Nerd Font Mono")
 config.font_size = 16.0
 config.initial_cols = 180
 config.initial_rows = 60
@@ -67,13 +67,19 @@ function basename(s)
   return string.gsub(s, '(.*[/\\])(.*)', '%2')
 end
 
+-- Auto-reload when we focus on the pane
+-- Escape first so we don't spill random characters if we were in
+-- non-insert mode.
 wezterm.on('window-focus-changed', function(window, pane)
     if window:is_focused() then
         local top_process = basename(pane:get_foreground_process_name())
-        print(top_process)
         if top_process == 'hx' then
-            local action = wezterm.action.SendString(':rla\r')
-            window:perform_action(action, pane);
+            -- Send escape first to ensure we're in normal mode
+            window:perform_action(wezterm.action.SendKey{key='Escape'}, pane)
+            -- Small delay to ensure the escape is processed
+            wezterm.sleep_ms(50)
+            -- Then send the reload command
+            window:perform_action(wezterm.action.SendString(':rla\r'), pane)
         end
     end
 end)
