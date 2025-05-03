@@ -53,7 +53,7 @@ config.keys = {
 
 -- Color schemes
 config.color_scheme = "Breeze (Gogh)"
-config.font = wezterm.font("JetBrains Mono Nerd Font Mono")
+config.font = wezterm.font("PragmataPro Mono Liga")
 config.font_size = 16.0
 config.initial_cols = 180
 config.initial_rows = 60
@@ -77,7 +77,7 @@ wezterm.on('window-focus-changed', function(window, pane)
             -- Send escape first to ensure we're in normal mode
             window:perform_action(wezterm.action.SendKey{key='Escape'}, pane)
             -- Small delay to ensure the escape is processed
-            wezterm.sleep_ms(50)
+            wezterm.sleep_ms(200)
             -- Then send the reload command
             window:perform_action(wezterm.action.SendString(':rla\r'), pane)
         end
