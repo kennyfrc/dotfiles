@@ -1,5 +1,4 @@
 # ~/.config/just/justfile
-# (your original commit helper left untouched)
 
 commit:
   git add .
