@@ -1,0 +1,27 @@
+# ~/.config/just/justfile
+# (your original commit helper left untouched)
+
+commit:
+  git add .
+  aider --commit --model gemini/gemini-2.5-flash-preview-04-17 --map-tokens 0
+
+# ------------------------------------------------------------
+# Git-history helpers
+# ------------------------------------------------------------
+
+# Undo the most recent commit.
+# With no argument       → soft reset (changes stay staged)
+# With the argument hard → hard reset (changes are discarded)
+undo mode='soft':
+  if [ "{{mode}}" = "hard" ]; then
+    git reset --hard HEAD~1
+    @echo "Last commit undone with **hard** reset; all changes discarded."
+  else
+    git reset --soft HEAD~1
+    @echo "Last commit undone with **soft** reset; changes still staged."
+  fi
+
+# Re-commit whatever was just undone, re-using the original message
+redo:
+  git commit -C ORIG_HEAD
+  @echo "Redo complete."
